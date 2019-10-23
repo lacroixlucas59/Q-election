@@ -15,7 +15,7 @@
 		<header>
            
         </header>
-        <div class="margium">
+        <div class="margium-s">
         <?php include("fonctions/hasard.php"); ?>
 
 

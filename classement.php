@@ -16,32 +16,31 @@
            
         </header>
         <div class="margium">
-            <?php 
-            $sql = "SELECT * FROM liste ORDER BY resultat LIMIT 10;"; // Etape 0 : Écriture de la requette
-            $query = $pdo->prepare($sql); // Etape 1 : Préparation de la requête
-            $query->execute();  // Etape 2 : exécution de la requête
-        
-            while($line = $query->fetch()) {
-                // A chaque tour de boucle, $line vaut l'enregistrement courant, (c'est une ligne 
+        <h1 class="c">Classement</h1>
+
+        <div class='liste'>
+                <?php 
+                $sql = "SELECT * FROM liste ORDER BY resultat DESC LIMIT 12;"; // Etape 0 : Écriture de la requette
+                $query = $pdo->prepare($sql); // Etape 1 : Préparation de la requête
+                $query->execute();  // Etape 2 : exécution de la requête
+                while($line = $query->fetch()) {
+                    // A chaque tour de boucle, $line vaut l'enregistrement courant, (c'est une ligne 
+                    
+                    echo "<img class='visuelvote' src='".$line['adresse']."' alt='illustration de Q' </p>";
+                    
+                }
                 
-                echo "<img class='visuelvote' src='".$line['adresse']."' alt='illustration de Q' </p>";
                 
-            }
-            
-            
-            
-            
-            echo "
-            <div class='contenumoduledevote'>
-                <div class='moduledevote'>
-                    <a href='index.php'><img src='img/noter.svg' alt='classement'/></a>
-                </div>           
+                
+                
+                echo "
+                <div class='contenumoduledevote'>
+                    <div class='moduledevote'>
+                        <a href='index.php'><img src='img/noter.svg' alt='classement'/></a>
+                    </div>           
+                </div>";
+                ?>
             </div>
-        ";
-            
-            ?>
-
-
         </div>
     </body>
 </html>

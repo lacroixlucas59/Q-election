@@ -34,6 +34,7 @@ header {
 .margium-s {
     display: block;
     max-width: 720px;
+    width: 100%;
     margin-right: auto;
     margin-left: auto;
 }
@@ -60,6 +61,15 @@ img.visuelvote {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+.liste {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.liste img {
+    width: 320px;
+    padding: 12px;
 }
 @media (max-width: 512px), handheld {
    
