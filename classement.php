@@ -11,7 +11,6 @@
 	</head>
 	<body>
         <?php include("fonctions/bd.php"); ?>
-       
 		<header>
            
         </header>
@@ -20,7 +19,7 @@
 
         <div class='liste'>
                 <?php 
-                $sql = "SELECT * FROM liste ORDER BY resultat DESC LIMIT 12;"; // Etape 0 : Écriture de la requette
+                $sql = "SELECT * FROM liste ORDER BY resultat DESC LIMIT 15;"; // Etape 0 : Écriture de la requette
                 $query = $pdo->prepare($sql); // Etape 1 : Préparation de la requête
                 $query->execute();  // Etape 2 : exécution de la requête
                 while($line = $query->fetch()) {
@@ -28,18 +27,13 @@
                     
                     echo "<img class='visuelvote' src='".$line['adresse']."' alt='illustration de Q' </p>";
                     
-                }
-                
-                
-                
-                
-                echo "
-                <div class='contenumoduledevote'>
-                    <div class='moduledevote'>
-                        <a href='index.php'><img src='img/noter.svg' alt='classement'/></a>
-                    </div>           
-                </div>";
+                };
                 ?>
+            </div>
+            <div class='contenumoduledevote'>
+                <div class='moduledevote'>
+                    <a href='index.php'><img src='img/noter.svg' alt='classement'/></a>
+                </div>           
             </div>
         </div>
     </body>

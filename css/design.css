@@ -60,7 +60,7 @@ img.visuelvote {
 .moduledevote {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .liste {
     display: flex;
