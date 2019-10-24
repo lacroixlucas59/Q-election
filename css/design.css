@@ -68,8 +68,24 @@ img.visuelvote {
     flex-direction: row;
 }
 .liste img {
-    width: 330px;
-    padding: 12px;
+    width: 308px;
+    border-radius: 5px;
+}
+.liste div {
+    padding: 12px 12px 20px 12px;
+}
+.liste span {
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:#aaa;
+    padding: 8px 12px;
+}
+.liste span img {
+    height: 18px;
+    width: 18px;
+    margin: 0px 5px 0px 15px;
 }
 @media (max-width: 512px), handheld {
    

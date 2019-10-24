@@ -40,8 +40,12 @@
                 while($line = $query->fetch()) {
                 // A chaque tour de boucle, $line vaut l'enregistrement courant, (c'est une ligne 
                     
-                    echo "<img class='visuelvote' src='".$line['adresse']."' alt='illustration de Q' </p>";
-                    
+                    echo "
+                    <div>
+                        <img class='visuelvote' src='".$line['adresse']."' alt='illustration de Q'/>
+                        <span><img src='img/score.svg' alt='score'/> ".$line['resultat']."   <img src='img/jaime.svg' alt='j aime'/>  ".$line['pour']." <img src='img/contre.svg' alt='contre'/>".$line['contre']."</span>
+                    </div>
+                    ";
                 };
             ?>
             </div>
