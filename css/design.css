@@ -68,7 +68,7 @@ img.visuelvote {
     flex-direction: row;
 }
 .liste img {
-    width: 320px;
+    width: 330px;
     padding: 12px;
 }
 @media (max-width: 512px), handheld {

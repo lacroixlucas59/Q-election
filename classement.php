@@ -18,12 +18,31 @@
         <h1 class="c">Classement</h1>
 
         <div class='liste'>
-                <?php 
-                $sql = "SELECT * FROM liste ORDER BY resultat DESC LIMIT 15;"; // Etape 0 : Écriture de la requette
+                <?php
+
+                if(isset($_GET['p'])){
+                    $page = $_GET['p'];
+                } else {
+                    $page = 1;
+                }
+                if ($page<1){
+                    $page = 1;
+                }
+                if ($page == 1){
+                    $pagem = 0;
+                } else {
+                    $pagem = $page-1;
+                }
+                $pagep = $page+1;
+                $afficher = $page*21;
+                $apartir = $pagem*21;
+              echo "Limite ".$afficher." - Offset ".$apartir." = ";
+              echo $afficher - $apartir;
+                $sql = "SELECT * FROM liste ORDER BY resultat DESC LIMIT $afficher OFFSET $apartir;"; // Etape 0 : Écriture de la requette
                 $query = $pdo->prepare($sql); // Etape 1 : Préparation de la requête
                 $query->execute();  // Etape 2 : exécution de la requête
                 while($line = $query->fetch()) {
-                    // A chaque tour de boucle, $line vaut l'enregistrement courant, (c'est une ligne 
+            // A chaque tour de boucle, $line vaut l'enregistrement courant, (c'est une ligne 
                     
                     echo "<img class='visuelvote' src='".$line['adresse']."' alt='illustration de Q' </p>";
                     
@@ -32,7 +51,16 @@
             </div>
             <div class='contenumoduledevote'>
                 <div class='moduledevote'>
+                    <?php
+
+                     if($pagem<1){
+                        echo "<img style='opacity:0.4;' src='img/precedent.svg' alt='classement'/>";
+                     } else {
+                        echo "<a href='classement.php?p=".$pagem."'><img src='img/precedent.svg' alt='classement'/></a>";
+                     }
+                     ?>
                     <a href='index.php'><img src='img/noter.svg' alt='classement'/></a>
+                    <?php echo "<a href='classement.php?p=".$pagep."'><img src='img/suivant.svg' alt='classement'/></a>";?>
                 </div>           
             </div>
         </div>
