@@ -16,10 +16,8 @@
         </header>
         <div class="margium">
         <h1 class="c">Classement</h1>
-
         <div class='liste'>
-                <?php
-
+            <?php
                 if(isset($_GET['p'])){
                     $page = $_GET['p'];
                 } else {
@@ -34,20 +32,18 @@
                     $pagem = $page-1;
                 }
                 $pagep = $page+1;
-                $afficher = $page*21;
                 $apartir = $pagem*21;
-              echo "Limite ".$afficher." - Offset ".$apartir." = ";
-              echo $afficher - $apartir;
-                $sql = "SELECT * FROM liste ORDER BY resultat DESC LIMIT $afficher OFFSET $apartir;"; // Etape 0 : Écriture de la requette
+ 
+                $sql = "SELECT * FROM liste ORDER BY resultat DESC LIMIT $apartir , 21"; // Etape 0 : Écriture de la requette
                 $query = $pdo->prepare($sql); // Etape 1 : Préparation de la requête
                 $query->execute();  // Etape 2 : exécution de la requête
                 while($line = $query->fetch()) {
-            // A chaque tour de boucle, $line vaut l'enregistrement courant, (c'est une ligne 
+                // A chaque tour de boucle, $line vaut l'enregistrement courant, (c'est une ligne 
                     
                     echo "<img class='visuelvote' src='".$line['adresse']."' alt='illustration de Q' </p>";
                     
                 };
-                ?>
+            ?>
             </div>
             <div class='contenumoduledevote'>
                 <div class='moduledevote'>
