@@ -42,19 +42,20 @@
                 
                 }
                 $limite = ceil($limite / 21);
-
+                $ran = $pagem*21+1;
                 $sql = "SELECT * FROM liste ORDER BY resultat DESC LIMIT $apartir , 21"; // Etape 0 : Écriture de la requette
                 $query = $pdo->prepare($sql); // Etape 1 : Préparation de la requête
                 $query->execute();  // Etape 2 : exécution de la requête
                 while($line = $query->fetch()) {
-                // A chaque tour de boucle, $line vaut l'enregistrement courant, (c'est une ligne 
                     
                     echo "
                     <div>
                         <img class='visuelvote' src='".$line['adresse']."' alt='illustration de Q'/>
                         <span><img src='img/score.svg' alt='score'/> ".$line['resultat']."   <img src='img/jaime.svg' alt='j aime'/>  ".$line['pour']." <img src='img/contre.svg' alt='contre'/>".$line['contre']."</span>
+                        <div class='rank'>".$ran."</div>
                     </div>
                     ";
+                    $ran++;
                 };
             ?>
             </div>
