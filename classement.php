@@ -51,8 +51,7 @@
                     echo "
                     <div>
                         <img class='visuelvote' src='".$line['adresse']."' alt='illustration de Q'/>
-                        <span><img src='img/score.svg' alt='score'/> ".$line['resultat']."   <img src='img/jaime.svg' alt='j aime'/>  ".$line['pour']." <img src='img/contre.svg' alt='contre'/>".$line['contre']."</span>
-                        <div class='rank'>".$ran."</div>
+                        <span><img src='img/score.svg' alt='score'/> ".$ran."   <img src='img/jaime.svg' alt='j aime'/>  ".$line['pour']." <img src='img/contre.svg' alt='contre'/>".$line['contre']."</span>
                     </div>
                     ";
                     $ran++;
@@ -71,14 +70,15 @@
                      echo "<p> page ".$page."</p>";
 
 
-
+                     if($page>$limite){
+                        header('Location: ?p='.$limite);
+                    }
                      if($page>=$limite){
                         echo "<img style='opacity:0;' src='img/suivant.svg' alt='suiavnt'/>";
                      } else {
                         echo "<a href='classement.php?p=".$pagep."'><img src='img/suivant.svg' alt='suivant'/></a>";
                     }
-
-?>
+                ?>
                 </div>           
             </div>
         </div>
