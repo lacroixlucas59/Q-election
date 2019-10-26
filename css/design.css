@@ -21,10 +21,15 @@ header {
     box-shadow: 0 14px 28px rgba(0,0,0,0.05), 0 10px 10px rgba(0,0,0,0.02);
 }
 header a, header span {
-    height: 60px;
+    height: 60px;display: flex;
+    align-items: center;
+}
+header a {
+    margin: 0px 13px;
 }
 header img{
     height: 60px;
+    width: 60px;
     padding: 5px;
 }
 .headerdis {
@@ -98,5 +103,7 @@ img.visuelvote {
     margin: 0px 5px 0px 15px;
 }
 @media (max-width: 512px), handheld {
-   
+   .r {
+       display: none;
+   }
 }
