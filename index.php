@@ -1,7 +1,7 @@
 <html lang="fr">
 	<head>
         <meta charset="UTF-8">
-		<title> Q-election</title>
+		<title>votez - Q-election</title>
 		<meta name=viewport content="width=device-width, initial-scale=1">
 		<link rel="icon" type="image/png" href="img/favicon.png" />
         <meta name="theme-color" content="#97c93c">
@@ -11,10 +11,8 @@
 	</head>
 	<body>
         <?php include("fonctions/bd.php"); ?>
-       
-		<header>
-           
-        </header>
+        <?php include("componant/header.php"); ?>
+
         <div class="margium-s">
         <?php include("fonctions/hasard.php"); ?>
 

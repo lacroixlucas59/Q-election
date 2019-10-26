@@ -29,7 +29,6 @@
             <div class='contenumoduledevote'>
                 <div class='moduledevote'>
                     <a href='?id=".$line['id']."&op=contre'><img src='img/croix.svg' alt='vote contre'/></a>
-                    <a href='classement.php'><img src='img/classement.svg' alt='classement'/></a>
                     <a href='?id=".$line['id']."&op=pour'><img src='img/coeur.svg' alt='vote pour'/></a>               
                 </div>           
             </div>
