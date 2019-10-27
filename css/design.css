@@ -3,6 +3,7 @@ body {
     font-family:'Open Sans', sans-serif;
     display: flex;
     flex-direction: column;
+    background-color: #f5f5f5;
 }
 *{
     box-sizing: border-box;
@@ -18,7 +19,7 @@ a {
 header {
     padding: 20px;   
     margin-bottom: 25px;
-    box-shadow: 0 14px 28px rgba(0,0,0,0.05), 0 10px 10px rgba(0,0,0,0.02);
+    background-color: white;
 }
 header a, header span {
     height: 60px;display: flex;
@@ -64,6 +65,11 @@ header img{
 }
 img.visuelvote {
     width: 100%;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.05), 0 10px 10px rgba(0,0,0,0.02);
+
+}
+.card {
+    background-color: white;
 }
 .moduledevote img{
     max-width: 60px;
