@@ -13,7 +13,7 @@
         <?php include("fonctions/bd.php"); ?>
         <?php include("componant/header.php"); ?>
         <div class="margium">
-        <h1 class="c">Classement</h1>
+        <h1 class="c">Classement des images</h1>
         <div class='liste'>
             <?php
                 if(isset($_GET['p'])){

@@ -30,8 +30,10 @@ header a {
 }
 header img{
     height: 60px;
-    width: 60px;
     padding: 5px;
+}
+header span img {
+    width: 60px;
 }
 .headerdis {
     display: flex;
@@ -108,9 +110,16 @@ img.visuelvote {
     height: 18px;
     width: 18px;
     margin: 0px 5px 0px 17px;
+    border-radius: 0px;
 }
-@media (max-width: 720px), handheld {
+.s{
+    display: none;
+}
+@media (max-width: 790px), handheld {
    .r {
        display: none;
+   }
+   .s{
+       display: block;
    }
 }
