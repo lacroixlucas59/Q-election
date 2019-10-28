@@ -89,6 +89,7 @@ img.visuelvote {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    margin: 0px auto;
 }
 .liste img {
     width: 308px;
@@ -123,3 +124,13 @@ img.visuelvote {
        display: block;
    }
 }
+@media (max-width: 1010px), handheld {
+    .liste {
+        max-width: 670px;
+    }
+ }
+ @media (max-width: 680px), handheld {
+    .liste {
+        max-width: 330px;
+    }
+ }
